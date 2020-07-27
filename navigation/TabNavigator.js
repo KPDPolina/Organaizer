@@ -6,6 +6,7 @@ import CalendarScreen from '../screens/CalendarScreen'
 import TasksScreen from '../screens/TasksScreen'
 import GroupsScren from '../screens/GroupsScreen'
 import NotessScren from '../screens/NotesScreen'
+import RemindersScreen from '../screens/RemindersScreen'
 
 
 const Tab = createMaterialTopTabNavigator();
@@ -27,6 +28,7 @@ export default function TabNavigator() {
         //   }} 
         />
       <Tab.Screen name="Tasks" component={TasksScreen} />
+      <Tab.Screen name="Reminders" component={RemindersScreen} />
       <Tab.Screen name="Groups" component={GroupsScren} />
       <Tab.Screen name="Notes" component={NotessScren} />
     </Tab.Navigator>
