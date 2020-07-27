@@ -6,8 +6,6 @@ import { NavigationContainer, DrawerActions } from '@react-navigation/native';
 import DrawerNavigator from './navigation/DrawerNavigator'
 
 export default function App() {
-  // const navigation = useNavigation();
-  // const { navigate } = this.props.navigation;
   return (
     <NavigationContainer>
       <StatusBar backgroundColor="#099" barStyle='light-content' />
