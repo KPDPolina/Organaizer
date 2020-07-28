@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import Icon from 'react-native-vector-icons/FontAwesome5';
+// import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import CalendarScreen from '../screens/CalendarScreen'
 import TasksScreen from '../screens/TasksScreen'
@@ -8,9 +8,7 @@ import GroupsScren from '../screens/GroupsScreen'
 import NotessScren from '../screens/NotesScreen'
 import RemindersScreen from '../screens/RemindersScreen'
 
-
 const Tab = createMaterialTopTabNavigator();
-
 export default function TabNavigator() {
   return (
     <Tab.Navigator tabBarOptions={{
