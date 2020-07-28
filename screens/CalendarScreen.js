@@ -12,17 +12,10 @@ export default function CalendarScreen() {
       <View style={{ height: 400 }}>
         <CalendarList
           firstDay={1}
-          // Callback which gets executed when visible months change in scroll view. Default = undefined
-          //onVisibleMonthsChange={(months) => { console.log('now these months are visible', months); }}
           onDayPress={(day) => { console.log('now these day are press', day); }}
-          // Max amount of months allowed to scroll to the past. Default = 50
           pastScrollRange={24}
-          // Max amount of months allowed to scroll to the future. Default = 50
           futureScrollRange={48}
-          // Enable or disable scrolling of calendar list
           scrollEnabled={true}
-          // showScrollIndicator={false}
-          // Enable or disable vertical scroll indicator. Default = false
           pagingEnabled={true}
           calendarHeight={400}
           style={{}}
@@ -30,10 +23,6 @@ export default function CalendarScreen() {
             todayTextColor: "#0bb",
             textSectionTitleColor: "#099",
           }}
-          // markedDates={this.state.markedDates}
-          // onDayPress={day => {
-          //   getSelectedDayEvents(day.dateString);
-          // }}
         />
       </View>
 

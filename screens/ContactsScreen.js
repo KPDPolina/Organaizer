@@ -8,7 +8,7 @@ export default function ContactsScreen ({ navigation }) {
       <View style={styles.topBar}>
         <Text style={styles.topText}>Organaizer</Text>
         <Button
-          title="="
+          title="  =  "
           onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
         />
       </View>
@@ -31,20 +31,7 @@ const styles = StyleSheet.create({
   }
 });
 
-
-
-
-
-// export default function ContactsScreen() {
-//     return (
-//       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-//         <Text>Contacts!</Text>
-//       </View>
-//     );
-//   }
-
-
-
+////////////////////////////////////////////////////////////////////////////////////////////
 
 
 // const ContactsStack = createStackNavigator();

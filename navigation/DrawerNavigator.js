@@ -26,7 +26,7 @@ function Home({ navigation }) {
         <View style={styles.topBar}>
           <Text style={styles.topText}>Organaizer</Text>
           <Button
-            title="="
+            title="  =  "
             onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
           />
         </View>
