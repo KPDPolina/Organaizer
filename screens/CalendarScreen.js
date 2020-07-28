@@ -1,6 +1,36 @@
 import * as React from 'react';
 import { Text, View, Button, StyleSheet } from 'react-native';
 import { CalendarList } from 'react-native-calendars';
+
+export default function CalendarScreen() {
+
+  return (
+    <View style={{ flex: 1, flexDirection: 'column', backgroundColor: "#fff" }}>
+      {/* <View style={{flexDirection: 'row'}}>
+        <Button title="My calengar" onPress={() => Alert.alert('Simple Button pressed')}/>      
+      </View> */}
+      <View style={{ height: 400 }}>
+        <CalendarList
+          firstDay={1}
+          onDayPress={(day) => { console.log('now these day are press', day); }}
+          pastScrollRange={24}
+          futureScrollRange={48}
+          scrollEnabled={true}
+          pagingEnabled={true}
+          calendarHeight={400}
+          style={{}}
+          theme={{
+            todayTextColor: "#0bb",
+            textSectionTitleColor: "#099",
+          }}
+        />
+      </View>
+
+    </View>
+  );
+}
+
+
 // import moment from 'moment';
 
 // export default class CalendarScreen extends React.Component {
@@ -65,44 +95,3 @@ import { CalendarList } from 'react-native-calendars';
 //     }
 // }
 
-
-
-
-export default function CalendarScreen() {
-
-  return (
-    <View style={{ flex: 1, flexDirection: 'column', backgroundColor: "#fff" }}>
-      {/* <View style={{flexDirection: 'row'}}>
-        <Button title="My calengar" onPress={() => Alert.alert('Simple Button pressed')}/>      
-      </View> */}
-      <View style={{ height: 350 }}>
-        <CalendarList
-          firstDay={1}
-          // Callback which gets executed when visible months change in scroll view. Default = undefined
-          //onVisibleMonthsChange={(months) => { console.log('now these months are visible', months); }}
-          onDayPress={(day) => { console.log('now these day are press', day); }}
-          // Max amount of months allowed to scroll to the past. Default = 50
-          pastScrollRange={24}
-          // Max amount of months allowed to scroll to the future. Default = 50
-          futureScrollRange={48}
-          // Enable or disable scrolling of calendar list
-          scrollEnabled={true}
-          // showScrollIndicator={false}
-          // Enable or disable vertical scroll indicator. Default = false
-          pagingEnabled={true}
-          calendarHeight={350}
-          style={{}}
-          theme={{
-            todayTextColor: "#0cc",
-            textSectionTitleColor: "#099",
-          }}
-          // markedDates={this.state.markedDates}
-          // onDayPress={day => {
-          //   getSelectedDayEvents(day.dateString);
-          // }}
-        />
-      </View>
-
-    </View>
-  );
-}
