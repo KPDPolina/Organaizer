@@ -45,6 +45,8 @@ export default class ContactsScreen extends React.Component {
             color: '#099',
             fontWeight: 'bold',
             fontSize: 20,
+            borderTopWidth: 1,
+            borderTopColor: '#077',
           }}>
             {item.firstName + ' '} {item.lastName}
           </Text>
@@ -113,10 +115,6 @@ export default class ContactsScreen extends React.Component {
             </View>
           ) : null}
           <FlatList
-            style={{
-              borderBottomWidth: 1,
-              borderBottomColor: '#077',
-            }}
             data={this.state.contacts}
             renderItem={this.renderItem}
             keyExtractor={(item, index) => index.toString()}
