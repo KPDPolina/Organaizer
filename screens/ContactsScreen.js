@@ -3,7 +3,6 @@ import { DrawerActions } from '@react-navigation/native';
 import {
   Text,
   View,
-  SafeAreaView,
   FlatList,
   TextInput,
   Button,
@@ -11,7 +10,6 @@ import {
   ActivityIndicator
 } from 'react-native';
 import * as Contacts from 'expo-contacts';
-import { ScrollView } from 'react-native-gesture-handler';
 
 export default class ContactsScreen extends React.Component {
   constructor() {
@@ -28,7 +26,6 @@ export default class ContactsScreen extends React.Component {
       return;
     }
     const { data } = await Contacts.getContactsAsync({ fields: [Contacts.Fields.PhoneNumbers] });
-    console.log(data);
     this.setState({ contacts: data, inMemoryContacts: data, isLoading: false });
   };
 
@@ -46,7 +43,7 @@ export default class ContactsScreen extends React.Component {
             fontWeight: 'bold',
             fontSize: 20,
             borderTopWidth: 1,
-            borderTopColor: '#077',
+            borderTopColor: '#9cc',
           }}>
             {item.firstName + ' '} {item.lastName}
           </Text>
@@ -68,9 +65,7 @@ export default class ContactsScreen extends React.Component {
         ' ' +
         contact.lastName
       ).toLowerCase();
-
       let searchTermLowercase = value.toLowerCase();
-
       return contactLowercase.indexOf(searchTermLowercase) > -1;
     });
     this.setState({ contacts: filteredContacts });
@@ -87,22 +82,21 @@ export default class ContactsScreen extends React.Component {
             onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
           />
         </View>
-        <TextInput
-          placeholder="Search"
-          placeholderTextColor="#fff"
-          style={{
-            backgroundColor: '#add',
-            height: 50,
-            fontSize: 30,
-            padding: 10,
-            color: 'white',
-            borderTopWidth: 1,
-            borderTopColor: '#077',
-            borderBottomWidth: 1,
-            borderBottomColor: '#077',
-          }}
-          onChangeText={value => this.searchContacts(value)}
-        />
+        <View style={{backgroundColor: "#099", height:41, paddingTop: 3, paddingRight: 3, paddingLeft: 3,}}>
+          <TextInput
+            placeholder="Search"
+            placeholderTextColor="#fff"
+            style={{
+              borderRadius: 35,
+              backgroundColor: '#7bb',
+              height: 35,
+              fontSize: 20,
+              padding: 5,
+              color: 'white',
+            }}
+            onChangeText={value => this.searchContacts(value)}
+          />
+        </View>
         <View style={{ flex: 1, paddingBottom: 5, paddingLeft: 3, paddingRight: 3 }}>
           {this.state.isLoading ? (
             <View style={{
@@ -150,62 +144,4 @@ const styles = StyleSheet.create({
     fontStyle: "italic",
     paddingStart: 10,
   }
-});
-
-
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// export default function ContactsScreen ({ navigation }) {
-//   return (
-//     <>
-//       <View style={styles.topBar}>
-//         <Text style={styles.topText}>Organaizer</Text>
-//         <Button
-//           title="  =  "
-//           onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
-//         />
-//       </View>
-//       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}><Text>Contacts!</Text></View>
-//     </>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   topBar: {
-//     flexDirection: 'row',
-//     height: 40,
-//     backgroundColor: "#099",
-//     justifyContent: 'space-between'
-//   },
-//   topText: {
-//     fontSize: 25,
-//     color: "#fff",
-//     fontStyle: "italic",
-//   }
-// });
-
-////////////////////////////////////////////////////////////////////////////////////////////
-
-
-// const ContactsStack = createStackNavigator();
-// const ContactsScreen = () => (
-//   <ContactsStack.Navigator>
-//     <ContactsStack.Screen
-//       name="ContactsList"
-//       component={ContactsList}
-//       options={{
-//         headerTitle: 'Contacts',
-//       }}
-//     />
-//     {/* <ContactsStack.Screen
-//       name="ContactDetails"
-//       component={ContactDetails}
-//       options={({ route }) => {
-//         return {
-//           headerTitle: `${route.params.contact.name.first} ${route.params.contact.name.last}`,
-//         };
-//       }}
-//     /> */}
-//   </ContactsStack.Navigator>
-// );
+})
