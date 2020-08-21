@@ -8,25 +8,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <StatusBar backgroundColor="#099" barStyle='light-content' />
-      {/* <View style={styles.topBar}>
-        <Text style={styles.topText}>Organaizer</Text>
-        <Button title="="/>
-      </View> */}
       <DrawerNavigator />
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  topBar: {
-    flexDirection: 'row',
-    height: 40,
-    backgroundColor: "#099",
-    justifyContent: 'space-between'
-  },
-  topText: {
-    fontSize: 25,
-    color: "#fff",
-    fontStyle: "italic",
-  }
-})
